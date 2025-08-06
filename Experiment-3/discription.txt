@@ -1,0 +1,14 @@
+In this experiment we created a admin user login page. Where we use four main HTML tags and css grid layout
+<NAV>
+<HEAD>
+<FOOTER>
+<MAIN>
+
+We also implemented a theme switching feature that allows users to toggle between light mode and dark mode
+Firstly i style the header
+then style the navigation bar,footer,head and main
+then we use DIV tag under the body tag in HTML.
+Define the root variables for functioning the light and dark mode application
+Create a checkbox and input word named{Dark mode}
+connect these two buttons and hide the checkbox
+Now test all the functionalities and our Admin page is ready
