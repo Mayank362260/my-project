@@ -1,0 +1,4 @@
+I created a dynamic product filter that lets users view products based on the category they select from a dropdown menu.
+ At the top of the page, there is a filter option with choices like All, Clothing, Electronics, and Books.
+ Below this, a list of products is displayed, each belonging to one of these categories. 
+Using JavaScript, the page listens for changes in the dropdown selection and instantly updates the product list without reloading the page. If the user selects "All", all products are shown, but if a specific category is chosen, only the items from that category are displayed. This makes it easier for users to quickly find what they are looking for.
