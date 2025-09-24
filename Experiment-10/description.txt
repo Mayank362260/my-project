@@ -1,0 +1,39 @@
+A Command Line Interface (CLI) application is a text-based program where users interact with the system by typing commands. In this experiment:
+
+Node.js is used as the runtime environment to execute JavaScript outside the browser.
+
+readline-sync module is used to take synchronous input from the user in the terminal.
+
+Array is used as an in-memory data structure to store employee details such as id, name, and role.
+
+Functions are created for adding, viewing, and deleting employee records.
+
+A menu-driven program is implemented using loops and switch-case to give users multiple options.
+
+This experiment helps in understanding the basics of Node.js, synchronous input handling, and performing array operations like push(), forEach(), findIndex(), and splice().
+
+Algorithm / Steps
+
+Start the program.
+
+Initialize an empty array to store employees.
+
+Display a menu with options:
+
+Add Employee
+
+View Employees
+
+Delete Employee
+
+Exit
+
+If the user selects Add Employee, ask for id, name, and role, then insert into the array.
+
+If the user selects View Employees, display all records from the array.
+
+If the user selects Delete Employee, ask for employee id and remove the matching record from the array.
+
+If the user selects Exit, terminate the program.
+
+Repeat steps 3–7 until the user chooses to exit.
