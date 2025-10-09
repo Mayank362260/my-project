@@ -1,0 +1,67 @@
+TICKET BOOKING API (Express.js) FUNCTIONALITY & FLOW OVERVIEW
+
+1. FEATURE: Seat Reservation with Locking Mechanism
+
+The program simulates a ticket booking system where users can view seats, 
+lock seats temporarily, confirm bookings, or release locked seats.
+
+2. APPLICATION STRUCTURE (Node.js + Express Overview)
+
+The application is structured around:
+- Express framework: Handles server setup and routing.
+- Middleware: express.json() parses JSON request bodies.
+- seats array: In-memory collection of seat objects with fields (id, status, lockedBy, lockTimeout).
+
+Defined routes:
+- GET '/' → Displays a welcome message.
+- GET '/seats' → Returns all seats with their status (available, locked, booked).
+- POST '/lock/:id' → Temporarily locks a seat for 10 seconds for a specific user.
+- POST '/confirm/:id' → Confirms a locked seat and books it permanently.
+- POST '/release/:id' → Releases a locked seat back to available.
+
+3. PROGRAM FLOW (Step-by-Step)
+
+Start: Server runs on http://localhost:3000.
+User Actions:
+- Access '/' → Get welcome message.
+- Access '/seats' → View the seat map (10 seats initially, all available).
+- POST to '/lock/:id' → Lock a seat. If not confirmed in 10 seconds, it resets to available.
+- POST to '/confirm/:id' → Confirm the booking if the seat is locked by that user.
+- POST to '/release/:id' → Release a locked seat manually.
+
+Loop: Server continues listening for requests until stopped manually.
+
+4. DATA STRUCTURE
+
+Seats are stored in an array of objects:
+
+[
+  { id: 1, status: "available", lockedBy: null, lockTimeout: null },
+  { id: 2, status: "available", lockedBy: null, lockTimeout: null },
+  ...
+]
+
+Each seat has:
+- id: Unique identifier.
+- status: "available" | "locked" | "booked".
+- lockedBy: Tracks which user locked the seat.
+- lockTimeout: Stores timeout reference to auto-release locks.
+
+5. USER EXPERIENCE (API Interaction)
+
+- Users interact via API tools (Postman/curl) with JSON inputs.
+- Seat locking provides a real-world booking experience by preventing multiple users from booking the same seat.
+- Automatic timeout ensures fair seat availability if confirmation is not made.
+
+6. LIMITATIONS
+
+- Data is not persistent; seats reset when the server restarts.
+- Lock timeout is fixed at 10 seconds; not configurable per user.
+- No authentication/authorization to prevent impersonation of users.
+
+LEARNING OUTCOMES
+
+- How to build an API with Express.js for real-world scenarios.
+- How to implement a seat locking mechanism with setTimeout.
+- How to manage shared resources (seats) safely in memory.
+- How to simulate a real booking system with confirm/release workflows.
