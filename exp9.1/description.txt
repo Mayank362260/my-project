@@ -1,0 +1,52 @@
+CI/CD (Continuous Integration / Continuous Deployment) pipelines automate the process of building and delivering software applications.
+When developers push changes to the repository, GitHub Actions automatically runs workflows defined in .yml files to test, build, and deploy the application.
+
+In this experiment, the pipeline performs the following:
+
+Builds the React project using Node.js.
+
+Runs tests to verify the build.
+
+Builds a Docker image for the app.
+
+Pushes the image to DockerHub using saved secrets (username and access token).
+
+This ensures consistent and error-free deployment without manual intervention.
+
+Software/Tools Used:
+
+GitHub
+
+GitHub Actions (for CI/CD automation)
+
+Docker & DockerHub
+
+Node.js
+
+VS Code
+
+Procedure:
+Phase 1 – Local Docker Setup (Exp 9.1 Recap)
+
+Created Dockerfile with two stages:
+
+Build Stage: Used Node image to build React app.
+
+Production Stage: Used Nginx image to serve build output.
+
+Built the Docker image locally:
+
+docker build -t exp9.1 .
+
+
+Verified the image:
+
+docker images
+
+
+Ran the container:
+
+docker run -p 8080:80 exp9.1
+
+
+Checked the output in browser at http://localhost:8080
